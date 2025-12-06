@@ -1,0 +1,40 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import requests
+from io import StringIO
+
+path_img = '/home/jeanne/Desktop/Dataviz/images'
+
+# Load dataset
+url = "https://raw.githubusercontent.com/JosephBARBIERDARNAL/data-matplotlib-journey/refs/heads/main/storms/storms.csv"
+csv_text = requests.get(url).text
+df_storms = pd.read_csv(StringIO(csv_text))
+
+colors = {
+    "hurricane": "#fcbf49",
+    "tropical depression": "#f77f00",
+    "tropical storm": "#d62828",
+    "tropical wave": "#003049"
+}
+
+
+# Unique years and types
+years = np.sort(df_storms["year"].unique())
+types = df_storms["status"].unique()
+
+# Prepare for stacking
+bottom = np.zeros(len(years))
+
+fig, ax = plt.subplots()
+
+for s in types:
+    counts = [df_storms[(df_storms["year"]==y) & (df_storms["status"]==s)]["n"].sum() for y in years]
+    ax.bar(years, counts, bottom=bottom, label=s, color=colors.get(s))
+    bottom += counts  # Update bottom for next stack
+
+ax.set_ylim(0, np.max(bottom) + 100)
+ax.set_title("How many Storms per Year?")
+ax.legend()
+#plt.show()
+plt.savefig('%s/storms.png' %path_img, bbox_inches='tight')
