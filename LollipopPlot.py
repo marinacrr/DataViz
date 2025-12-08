@@ -26,16 +26,16 @@ years = np.array(years)
 order = ["tropical wave", "tropical depression", "tropical storm", "hurricane"]
 types = [t for t in order if t in df_storms["status"].unique()]
 
-
-shift = 0
-fig, ax = plt.subplots(figsize=(12, 4))
+shift = -0.28
+fig, ax = plt.subplots(figsize=(10,4))
 for s in types:
     counts = [df_storms[(df_storms["year"]==y) & (df_storms["status"]==s)]["n"].sum() for y in years]
     ax.scatter(years + shift, counts, s=counts, color=colors.get(s), label=s)
-    ax.vlines(years + shift, ymin=0, ymax=counts, linestyle='--', linewidth=2, color=colors.get(s))
+    ax.vlines(years + shift, ymin=0, ymax=counts, linestyle='--', linewidth=1, color=colors.get(s))
     shift += 0.2
 
 ax.set_yticks(range(0, 601, 200))
+ax.set_xticks(range(2010, 2023, 1))
 ax.set_title("How many Storms per Year?")
 ax.legend(loc='upper left', bbox_to_anchor=(0, 1))
 plt.show()
