@@ -1,6 +1,6 @@
 # **Collection of Visualizations** 📊
 
-This repository is a collection of data visualizations I've created for work, personal projects, and training material. Each item includes both the source code and the final plot.
+This repository is a collection of data visualizations I've created for trainings in Data Visualization. 
 
 
 ## **What’s Inside** 📂
