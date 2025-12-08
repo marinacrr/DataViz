@@ -1,5 +1,5 @@
 ''' 
-Create a stacked barplot
+Stacked barplot
 '''
 
 import pandas as pd
