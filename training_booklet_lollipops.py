@@ -48,7 +48,7 @@ yy = 1.15
 l = 1
 a = 1.6
 size = 14
-x0 = len(stats)/2 - 1.5
+x0 = len(stats)/2 -2
 style = dict(size=size, ha="center", fontweight="bold")
 
 ''' FIGURE '''
@@ -89,13 +89,13 @@ for n, t in enumerate(types):
 ax.text(x=x0, y=yy, s="on-site", color=c_onsite, **style)
 ax.text(x=x0 + 2, y=yy, s="online", color=c_online, **style)
 
-ax.scatter(x=x0 + 3.6, y=yy+0.005, facecolor='none', edgecolor=c_hack, s=100, linewidth=2)
+ax.scatter(x=x0 + 3.6, y=yy+0.006, facecolor='none', edgecolor=c_hack, s=150, linewidth=2)
 ax.text(x=x0 + 5, y=yy, s="hackathon", color=c_hack, **style)
 
-ax.scatter(x=x0 -0.5 + 8, y=yy+0.005, facecolor='none', edgecolor=c_online, s=50**a, linewidth=1)
-ax.scatter(x=x0 -0.5 + 8.18, y=yy+0.005, facecolor='none', edgecolor=c_online, s=100**a, linewidth=1)
-ax.scatter(x=x0 -0.5 + 8.34, y=yy+0.005, facecolor='none', edgecolor=c_online, s=150**a, linewidth=1)
-ax.text(x=x0 + 9.6, y=yy, s="attendees", color=c_online, **style)
+ax.scatter(x=x0 + 7.85, y=yy+0.005, facecolor='none', edgecolor=c_online, s=50**a, linewidth=1)
+ax.scatter(x=x0 + 7.65, y=yy+0.005, facecolor='none', edgecolor=c_online, s=100**a, linewidth=1)
+ax.scatter(x=x0 + 7.5, y=yy+0.005, facecolor='none', edgecolor=c_online, s=150**a, linewidth=1)
+ax.text(x=x0 + 9.5, y=yy, s="participants", color=c_online, size=size, ha="center")
 
 ax.set_ylim(ymin, ymax)
 ax.set_yticks([])
