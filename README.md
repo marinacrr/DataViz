@@ -1,19 +1,15 @@
-# **Collection of Visualizations** 📊
+# **Collection of DataViz scripts** 📊
 
-This repository is a collection of data visualizations I've created for trainings in Data Visualization. 
+This repository is a collection of data visualization scripts I've written. 
 
 
-## **What’s Inside** 📂
+## **What’s inside** 📂
 
-Visualizations created while learning new techniques, libraries, or styles.
+Scripts created while learning new techniques, libraries, or styles.
 
 
 ## **Tools & Libraries** 🎨
 
 Python: matplotlib, seaborn, plotly, pandas.
-
-
-### **Highlights** ⭐
-
 
 
